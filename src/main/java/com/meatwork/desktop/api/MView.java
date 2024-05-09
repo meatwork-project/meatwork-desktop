@@ -10,12 +10,5 @@ import java.net.URL;
  */
 @IService(scope = IService.Scope.MULTIPLE)
 public interface MView {
-
-	default URL getFxmlView() {
-		FxResources annotation = this
-				.getClass()
-				.getAnnotation(FxResources.class);
-		return this.getClass().getResource(annotation.value() + ".fxml");
-	}
-
+	URL getFxmlView();
 }

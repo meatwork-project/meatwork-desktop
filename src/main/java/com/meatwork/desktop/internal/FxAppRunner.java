@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Set;
 
 import static com.gluonhq.charm.glisten.application.AppManager.HOME_VIEW;
@@ -45,7 +46,14 @@ public class FxAppRunner extends Application {
 				throw new MFXException("%s must be annotated with @FxResources".formatted(view.getClass().getName()));
 			}
 
-			FXMLLoader fxmlLoader = new FXMLLoader(view.getFxmlView());
+			URL fxmlView = view.getFxmlView();
+			if (fxmlView == null) {
+				throw new MFXException("cannot found fxml %s".formatted(view
+						                                                        .getClass()
+						                                                        .getName()));
+			}
+
+			FXMLLoader fxmlLoader = new FXMLLoader(fxmlView);
 
 			if (fxResources
 					.value()
