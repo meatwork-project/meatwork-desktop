@@ -11,7 +11,6 @@ import java.net.URL;
  */
 @IService
 public interface FxConfiguration {
-	String value();
 	URL styleSheetResource();
 	InputStream getIconApp();
 }

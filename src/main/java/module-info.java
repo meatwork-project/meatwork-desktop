@@ -8,8 +8,12 @@ module com.meatwork.desktop {
 	requires org.slf4j;
 	requires jakarta.inject;
 	requires javafx.graphics;
-	requires com.gluonhq.charm.glisten;
 	requires javafx.fxml;
+	requires com.gluonhq.charm.glisten;
+	requires com.gluonhq.attach.lifecycle;
+	requires com.gluonhq.attach.util;
+	requires com.gluonhq.attach.display;
+	requires com.gluonhq.attach.storage;
 
 	exports com.meatwork.desktop.api;
 	exports com.meatwork.desktop.internal to com.meatwork.core, javafx.graphics;
