@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Set;
 
@@ -93,9 +94,16 @@ public class FxAppRunner extends Application {
 	private void postInit(Scene scene) {
 		Swatch.BLUE.assignTo(scene);
 		FxConfiguration fxConfiguration = fxAppInjector.getFxConfiguration();
-		scene.getStylesheets().add(fxConfiguration.styleSheetResource().toExternalForm());
-		if (fxConfiguration.getIconApp() != null) {
-			((Stage) scene.getWindow()).getIcons().add(new Image(fxConfiguration.getIconApp()));
+		URL url = fxConfiguration.styleSheetResource();
+		if (url == null) {
+			LOGGER.warn("url for stylesheet global not found");
+		} else {
+			scene.getStylesheets().add(url.toExternalForm());
+		}
+
+		InputStream iconApp = fxConfiguration.getIconApp();
+		if (iconApp != null) {
+			((Stage) scene.getWindow()).getIcons().add(new Image(iconApp));
 		}
 	}
 }
