@@ -12,6 +12,6 @@ module com.meatwork.desktop {
 	requires javafx.fxml;
 
 	exports com.meatwork.desktop.api;
-	exports com.meatwork.desktop.internal to com.meatwork.core;
+	exports com.meatwork.desktop.internal to com.meatwork.core, javafx.graphics;
 
 }
