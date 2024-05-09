@@ -3,12 +3,10 @@ package com.meatwork.desktop.internal;
 import com.gluonhq.charm.glisten.application.AppManager;
 import com.gluonhq.charm.glisten.visual.Swatch;
 import com.meatwork.core.api.di.CDI;
-import com.meatwork.core.api.di.Service;
 import com.meatwork.desktop.api.ComplementTools;
 import com.meatwork.desktop.api.FxConfiguration;
 import com.meatwork.desktop.api.FxResources;
 import com.meatwork.desktop.api.MView;
-import jakarta.inject.Inject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -47,7 +45,7 @@ public class FxAppRunner extends Application {
 				throw new MFXException("%s must be annotated with @FxResources".formatted(view.getClass().getName()));
 			}
 
-			FXMLLoader fxmlLoader = new FXMLLoader(view.getClass().getResource(fxResources.value()));
+			FXMLLoader fxmlLoader = new FXMLLoader(view.getClass().getResource(fxResources.value() + ".fxml"));
 
 			if (fxResources
 					.value()
@@ -76,7 +74,7 @@ public class FxAppRunner extends Application {
 	}
 
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(Stage stage) {
 		appManager.start(stage);
 	}
 
