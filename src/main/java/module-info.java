@@ -9,6 +9,7 @@ module com.meatwork.desktop {
 	requires jakarta.inject;
 	requires javafx.graphics;
 	requires javafx.fxml;
+	requires javafx.controls;
 	requires com.gluonhq.charm.glisten;
 	requires com.gluonhq.attach.lifecycle;
 	requires com.gluonhq.attach.util;

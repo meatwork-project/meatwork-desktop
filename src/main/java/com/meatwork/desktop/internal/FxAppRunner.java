@@ -45,7 +45,7 @@ public class FxAppRunner extends Application {
 				throw new MFXException("%s must be annotated with @FxResources".formatted(view.getClass().getName()));
 			}
 
-			FXMLLoader fxmlLoader = new FXMLLoader(view.getClass().getResource(fxResources.value() + ".fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(view.getFxmlView());
 
 			if (fxResources
 					.value()
