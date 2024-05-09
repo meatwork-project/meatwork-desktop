@@ -16,8 +16,8 @@ public class FxOnStartup implements ApplicationStartup {
 	}
 
 	@Override
-	public void run(String[] args) throws Exception {
-		FxAppRunner.launch(args);
+	public void run(String[] args) {
+		FxAppRunner.run(args);
 	}
 
 

@@ -73,6 +73,10 @@ public class FxAppRunner extends Application {
 		}
 	}
 
+	public static void run(String[] args) {
+		launch(args);
+	}
+
 	@Override
 	public void start(Stage stage) {
 		appManager.start(stage);
