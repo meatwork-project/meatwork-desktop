@@ -62,6 +62,7 @@ public class FxAppRunner extends Application {
 				homeViewFinded = true;
 			}
 
+			fxmlLoader.setController(view);
 			appManager.addViewFactory(fxResources.value(), () -> {
 				try {
 					return fxmlLoader.load();
