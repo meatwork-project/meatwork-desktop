@@ -1,7 +1,8 @@
-package com.meatwork.desktop.internal;
+package com.meatwork.desktop.api;
 
 import com.meatwork.core.api.di.Service;
 import com.meatwork.core.api.service.ApplicationStartup;
+import com.meatwork.desktop.internal.FxAppRunner;
 
 /*
  * Copyright (c) 2016 Taliro.
