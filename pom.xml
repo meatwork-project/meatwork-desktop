@@ -18,18 +18,11 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gluonfx.plugin.version>1.0.22</gluonfx.plugin.version>
-        <javafx.version>21</javafx.version>
-        <attach.version>4.0.19</attach.version>
-        <javafx.plugin.version>0.0.8</javafx.plugin.version>
+        <flatlaf.version>3.6</flatlaf.version>
+        <forms_rt.version>7.0.3</forms_rt.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>info.picocli</groupId>
-            <artifactId>picocli</artifactId>
-            <version>4.7.5</version>
-        </dependency>
         <dependency>
             <groupId>com.meatwork</groupId>
             <artifactId>meatwork-core</artifactId>
@@ -37,69 +30,20 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>${javafx.version}</version>
+            <groupId>com.meatwork</groupId>
+            <artifactId>meatwork-test</artifactId>
+            <version>${revision}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>${javafx.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gluonhq</groupId>
-            <artifactId>charm-glisten</artifactId>
-            <version>6.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gluonhq.attach</groupId>
-            <artifactId>display</artifactId>
-            <version>${attach.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gluonhq.attach</groupId>
-            <artifactId>lifecycle</artifactId>
-            <version>${attach.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gluonhq.attach</groupId>
-            <artifactId>statusbar</artifactId>
-            <version>${attach.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gluonhq.attach</groupId>
-            <artifactId>storage</artifactId>
-            <version>${attach.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gluonhq.attach</groupId>
-            <artifactId>util</artifactId>
-            <version>${attach.version}</version>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>${flatlaf.version}</version>
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>Gluon</id>
-            <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
-        </repository>
-    </repositories>
-
     <build>
         <plugins>
-            <plugin>
-                <groupId>com.gluonhq</groupId>
-                <artifactId>gluonfx-maven-plugin</artifactId>
-                <version>${gluonfx.plugin.version}</version>
-                <configuration>
-                    <attachList>
-                        <list>display</list>
-                        <list>lifecycle</list>
-                        <list>statusbar</list>
-                        <list>storage</list>
-                    </attachList>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>flatten-maven-plugin</artifactId>
