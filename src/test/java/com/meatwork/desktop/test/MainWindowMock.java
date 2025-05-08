@@ -3,8 +3,8 @@ package com.meatwork.desktop.test;
 import com.meatwork.core.api.di.Service;
 import com.meatwork.desktop.api.Window;
 import com.meatwork.desktop.api.WindowAttr;
-import com.meatwork.desktop.internal.IWindow;
-import com.meatwork.desktop.internal.WindowManager;
+import com.meatwork.desktop.api.IWindow;
+import com.meatwork.desktop.api.WindowManager;
 import jakarta.inject.Inject;
 
 import javax.swing.JButton;
@@ -24,7 +24,7 @@ public class MainWindowMock extends Window implements IWindow {
 	@Override
 	public void init() {
 		button1 = new JButton("Button1");
-		button1.addActionListener(e -> resultOkButtonClicked = "button1");
+		button1.addActionListener(_ -> resultOkButtonClicked = "button1");
 	}
 
 	public JButton getButton1() {

@@ -1,4 +1,4 @@
-package com.meatwork.desktop.internal;
+package com.meatwork.desktop.api;
 
 import com.meatwork.core.api.di.IService;
 

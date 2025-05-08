@@ -15,11 +15,10 @@
     <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <flatlaf.version>3.6</flatlaf.version>
         <forms_rt.version>7.0.3</forms_rt.version>
+        <exec-maven-plugin.version>3.4.1</exec-maven-plugin.version>
     </properties>
 
     <dependencies>

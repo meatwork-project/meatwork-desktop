@@ -1,7 +1,6 @@
-package com.meatwork.desktop.internal;
+package com.meatwork.desktop.api;
 
 import com.meatwork.core.api.di.IService;
-import com.meatwork.desktop.api.WindowMode;
 
 @IService(scope = IService.Scope.MULTIPLE)
 public interface IWindow {

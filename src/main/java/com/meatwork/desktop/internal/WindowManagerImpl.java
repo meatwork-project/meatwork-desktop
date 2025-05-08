@@ -1,10 +1,7 @@
 package com.meatwork.desktop.internal;
 
 import com.meatwork.core.api.di.Service;
-import com.meatwork.desktop.api.WSize;
-import com.meatwork.desktop.api.Window;
-import com.meatwork.desktop.api.WindowAttr;
-import com.meatwork.desktop.api.WindowProperties;
+import com.meatwork.desktop.api.*;
 
 import java.util.Map;
 import java.util.Optional;

@@ -1,14 +1,14 @@
 package com.meatwork.desktop.test;
 
 import com.meatwork.core.api.service.ApplicationStartup;
-import com.meatwork.desktop.internal.IWindow;
+import com.meatwork.desktop.api.IWindow;
 import com.meatwork.test.api.MeatworkExtension;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
@@ -24,7 +24,7 @@ public class WindowsTest {
 	public void test() throws InterruptedException, InvocationTargetException {
 		swingOnStartup.stream().findFirst().ifPresent(applicationStartup -> {
 			try {
-				applicationStartup.run(null);
+				applicationStartup.run(null, null);
 			} catch (Exception e) {
 				throw new RuntimeException(e);
 			}

@@ -1,7 +1,5 @@
 package com.meatwork.desktop.api;
 
-import com.meatwork.desktop.internal.IWindow;
-import com.meatwork.desktop.internal.WindowManager;
 import com.meatwork.desktop.internal.WindowManagerImpl;
 
 import javax.swing.JFrame;

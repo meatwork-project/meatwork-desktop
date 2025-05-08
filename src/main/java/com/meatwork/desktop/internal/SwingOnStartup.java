@@ -3,12 +3,12 @@ package com.meatwork.desktop.internal;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.meatwork.core.api.di.Service;
 import com.meatwork.core.api.service.ApplicationStartup;
+import com.meatwork.desktop.api.IWindow;
 import com.meatwork.desktop.api.ThemeConfiguration;
+import com.meatwork.desktop.api.WindowManager;
 import jakarta.inject.Inject;
 
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.*;
 import java.util.Optional;
 import java.util.Set;
 
@@ -34,7 +34,7 @@ public class SwingOnStartup implements ApplicationStartup {
 	}
 
 	@Override
-	public void run(String[] args) throws UnsupportedLookAndFeelException {
+	public void run(Class<?> applicationCls, String[] args) throws UnsupportedLookAndFeelException {
 		UIManager.setLookAndFeel(Optional
 				                         .ofNullable(themeConfiguration)
 				                         .map(ThemeConfiguration::getLookAndFeel)
