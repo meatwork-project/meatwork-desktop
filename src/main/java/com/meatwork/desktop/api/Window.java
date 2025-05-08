@@ -2,7 +2,8 @@ package com.meatwork.desktop.api;
 
 import com.meatwork.desktop.internal.WindowManagerImpl;
 
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 public abstract class Window extends JFrame implements IWindow {
 
@@ -18,9 +19,10 @@ public abstract class Window extends JFrame implements IWindow {
 		setTitle(window.title());
 		setSize(wSize.width(), wSize.height());
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(null);
+		setLayout(new FlowLayout());
 		setVisible(true);
 		this.init();
+		SwingUtilities.updateComponentTreeUI(this);
 	}
 
 	@Override
